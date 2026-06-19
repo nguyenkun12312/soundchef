@@ -1,0 +1,526 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111; 
+    color: #fff;
+    transition: font-size 0.2s ease;
+}
+/* NAV */
+.top-bar {
+    gap: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #000;
+}
+/* LOGO */
+.logo img {
+    height: 70px;
+}
+/* SEARCH */
+.search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.search input {
+    width: 260px;          
+    padding: 10px 14px;    
+    border-radius: 8px;
+    border: 2px solid #ffd700;
+    font-size: 15px;
+    color: #000;
+    background-color: #fff;
+}
+.search button {
+    padding: 10px 16px;
+    background-color: #ffd700;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+}
+/* NAV NAVIGATION */
+nav {
+    background-color: #111;
+    padding: 15px 0;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    padding: 10px;
+}
+nav button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+/* HỆ THỐNG FOCUS ĐẠT CHUẨN WCAG */
+nav button:focus,
+.search input:focus,
+.search button:focus,
+.card:focus,
+.menu-item:focus,
+.btn-back:focus {
+    outline: 3px solid #ffd700 !important;
+}
+nav button.active {
+    background-color: #ffd700; 
+    color: #000;              
+    font-weight: bold;
+    box-shadow: 0 0 10px #ffd700; 
+}
+/* BANNER */
+.banner {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* THẺ ĐỌC MÀN HÌNH CHUẨN SEO */
+.sr-only {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .banner {
+        height: 150px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+    }
+}
+/* MAIN */
+main {
+    text-align: center;
+    padding: 40px 20px;
+}
+/* TRANG CHỦ MÓN ĂN */
+.top-list {
+    margin-top: 30px;
+}
+.tit {
+    color: #ff6600; 
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+.grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+.card {
+    background-color: #222;
+    border: 2px solid #333;
+    border-radius: 12px;
+    width: 260px;
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.card:hover {
+    border-color: #ffd700; 
+    transform: translateY(-5px);
+}
+.thumb {
+    position: relative;
+    margin-bottom: 12px;
+}
+.thumb img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+.icon {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.6);
+    padding: 5px;
+    border-radius: 50%;
+}
+.icon .material-symbols-outlined {
+    color: #ffffff !important; 
+    font-size: 20px;           
+}
+.name {
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+/* INFO PANEL */
+.info {
+    margin-top: 60px;
+    background-color: #000;
+    padding: 50px 20px;
+}
+.box-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.item {
+    max-width: 250px;
+}
+.ic {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.item h3 {
+    color: #ff6600;
+    margin-bottom: 8px;
+}
+.item p {
+    color: #ccc;
+    font-size: 14px;
+}
+.btn-audio {
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+.ic .material-symbols-outlined {
+    font-size: 48px;  
+    display: block; 
+    margin: 0 auto 10px auto;
+}
+/* PAGE GUIDE */
+.guide-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    color: #ccc;
+}
+.intro-text {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.key-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.key-table th, .key-table td {
+    padding: 15px;
+    border-bottom: 1px solid #333;
+}
+.key-table th {
+    background-color: #ff6600;
+    color: white;
+    text-align: left;
+}
+kbd {
+    background-color: #444;
+    border-radius: 5px;
+    border: 1px solid #666;
+    color: #ffd700;
+    display: inline-block;
+    padding: 2px 8px;
+    font-family: monospace;
+    font-weight: bold;
+}
+.tip-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #222;
+    padding: 20px;
+    border-left: 5px solid #ffd700;
+}
+/* RECIPE FULL VIEW */
+.recipe-full {
+    background: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px auto; 
+    max-width: 800px;  
+    text-align: left;  
+}
+.ingredient-section {
+    border-bottom: 2px dashed #ff6600;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.method-section {
+    padding-top: 10px;
+}
+.recipe-full h4 {
+    color: #ffd700;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.recipe-full ul {
+    padding-left: 25px; 
+    margin-top: 10px;
+}
+.recipe-full p {
+    padding-left: 5px;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+.btn-back {
+    background: #333;
+    color: #ffd700;
+    border: 1px solid #ffd700;
+    padding: 8px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+.btn-back:hover {
+    background: #ffd700;
+    color: #000;
+}
+.menu-item {
+    background: none;
+    border: 2px solid #ff6600; 
+    color: #ff6600;           
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+.menu-item:hover {
+    background: #ff6600;      
+    color: #fff;              
+    transform: scale(1.05);   
+}
+/* BLOG SECTION */
+#page-blog {
+    padding: 40px 20px;
+    background-color: #0d0d0d;
+}
+.blog-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.tit-blog {
+    color: #ff6600; 
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+.blog-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.blog-post {
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+.blog-post:hover {
+    transform: translateY(-5px);
+    border-color: #ff6600;
+}
+.blog-thumb img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.blog-content {
+    padding: 20px;
+    text-align: left;
+}
+.category {
+    color: #ff6600;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.blog-content h3 {
+    color: #fff;
+    margin: 10px 0;
+    font-size: 18px;
+}
+.blog-content p {
+    color: #888;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.read-more {
+    color: #ffd700; 
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+}
+.read-more:hover {
+    text-decoration: underline;
+}
+/* CONTACT LIÊN HỆ */
+#pg-ct {
+    padding: 60px 20px;
+    background: #000;
+}
+.ct-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.ct-ttl {
+    color: #ff6600; 
+    font-size: 28px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.ct-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.ct-card {
+    background: #151515;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+.ct-card:hover {
+    border-color: #ff6600;
+    transform: translateY(-5px);
+}
+.ct-icon {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 15px;
+}
+.ct-card h3 {
+    color: #ffd700;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.ct-card p {
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.5;
+}
+footer {
+    padding: 20px;
+    background: #000;
+    margin-top: 40px;
+    border-top: 1px solid #222;
+}
+.access-panel {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    z-index: 9999;
+}
+#panel-toggle {
+    background: #ffd700;
+    color: #000;
+    border: none;
+    padding: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+#panel-toggle:hover {
+    transform: scale(1.1);
+}
+.panel-content {
+    background: #222;
+    border: 2px solid #ffd700;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+    width: 200px;
+}
+.panel-content button {
+    background: #333;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: left;
+    font-size: 14px;
+    transition: 0.2s;
+}
+.panel-content button:hover {
+    background: #ffd700;
+    color: #000;
+}
+body.high-contrast-mode {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+body.high-contrast-mode button, 
+body.high-contrast-mode kbd {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 3px solid #fff !important;
+}
+body.high-contrast-mode .card,
+body.high-contrast-mode .recipe-full,
+body.high-contrast-mode .blog-post,
+body.high-contrast-mode .ct-card,
+body.high-contrast-mode .panel-content {
+    background-color: #000 !important;
+    border: 3px solid #fff !important;
+}
+.hidden-section {
+    display: none !important;
+}

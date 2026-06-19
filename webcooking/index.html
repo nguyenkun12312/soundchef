@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+  <link rel="stylesheet" href="style.css">
+  <title>SoundChef</title>
+</head>
+<body>
+<header>
+  <div class="top-bar">
+    <div class="logo">
+        <img src="/img/logo.webp" alt="SoundChef Logo">
+    </div>
+    <form class="search" role="search" aria-label="Tìm kiếm món ăn">
+      <label for="searchInput" class="sr-only">Tìm món</label>
+      <input type="text" id="searchInput" placeholder="Nhập tên món...">
+      <button type="submit">Tìm</button>
+    </form>
+  </div>
+  <nav aria-label="Thanh điều hướng chính">
+    <ul>
+      <li><button>Trang Chủ</button></li>
+      <li><button>Hướng dẫn</button></li>
+      <li><button>Nấu ăn</button></li>
+      <li><button>Blogs</button></li>
+      <li><button>Liên Hệ</button></li>
+    </ul>
+  </nav>
+  <div class="banner">
+    <img src="/img/banner.webp" alt="Banner ẩm thực SoundChef">
+  </div>
+</header>
+
+<main>
+  <section id="home">
+    <div class="top-list">
+      <h2 class="tit">Món ngon hôm nay</h2>
+      <div class="grid">
+        <button class="card" aria-label="Món Trứng chiên, nhấn Enter để nghe cách nấu">
+          <div class="thumb">
+            <img src="/img/trungchien.jpg" alt="Trứng chiên nước mắm bốc khói">
+            <span class="icon"><span class="material-symbols-outlined">volume_up</span></span>
+          </div>
+          <p class="name">Trứng Chiên Nước Mắm</p>
+        </button>
+        <button class="card" aria-label="Món Cơm hến, nhấn Enter để nghe cách nấu">
+          <div class="thumb">
+            <img src="/img/comhen.jpg" alt="Đĩa Cơm hến cố đô Huế đặc sản">
+            <span class="icon"><span class="material-symbols-outlined">volume_up</span></span>
+          </div>
+          <p class="name">Cơm Hến Cố Đô</p>
+        </button>
+        <button class="card" aria-label="Món Chè bắp, nhấn Enter để nghe cách nấu">
+          <div class="thumb">
+            <img src="/img/chebap.jpg" alt="Ly Chè bắp nước cốt dừa béo ngậy">
+            <span class="icon"><span class="material-symbols-outlined">volume_up</span></span>
+          </div>
+          <p class="name">Chè Bắp Cốt Dừa</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="info">
+      <h2 class="tit">Tại sao chọn SoundChef?</h2>
+      <div class="box-wrap">
+        <div class="item">
+          <div class="ic"><span class="material-symbols-outlined">ear_sound</span></div>
+          <h3>Thấy bằng tai</h3>
+          <p>Âm thanh nấu ăn sống động.</p>
+        </div>
+        <div class="item">
+          <div class="ic"><span class="material-symbols-outlined">keyboard</span></div>
+          <h3>Dùng phím tắt</h3>
+          <p>Điều hướng Tab và Enter.</p>
+        </div>
+        <div class="item">
+          <div class="ic"><span class="material-symbols-outlined">add_moderator</span></div>
+          <h3>Bếp an toàn</h3>
+          <p>Mẹo nấu ăn cho người khiếm thị.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="voice-cmd">
+      <button class="btn-audio" aria-label="Nghe hướng dẫn sử dụng web">
+        <span class="material-symbols-outlined">music_note</span> Nghe hướng dẫn sử dụng
+      </button>
+    </div>
+  </section>
+
+  <section id="guide" class="container hidden-section">
+    <h2 class="tit">Hướng dẫn sử dụng</h2>   
+    <div class="guide-content">
+        <p class="intro-text">SoundChef được thiết kế để bạn có thể nấu ăn mà không cần nhìn màn hình. Hãy làm quen với các phím tắt sau:</p> 
+        <table class="key-table">
+            <tr>
+                <th>Phím tắt</th>
+                <th>Chức năng</th>
+            </tr>
+            <tr>
+                <td><kbd>Tab</kbd></td>
+                <td>Di chuyển giữa các món ăn và nút bấm.</td>
+            </tr>
+            <tr>
+                <td><kbd>Enter</kbd></td>
+                <td>Chọn món hoặc thực hiện lệnh.</td>
+            </tr>
+            <tr>
+                <td><kbd>Space</kbd></td>
+                <td>Tạm dừng hoặc tiếp tục nghe hướng dẫn.</td>
+            </tr>
+            <tr>
+                <td><kbd>M</kbd></td>
+                <td>Tắt/Bật âm thanh nhanh.</td>
+            </tr>
+            <tr>
+                <td><kbd>Esc</kbd></td>
+                <td>Quay lại trước đó</td>
+            </tr>
+        </table>
+        <div class="tip-box">
+            <span class="material-symbols-outlined">lightbulb</span>
+            <p><strong>Mẹo:</strong> Hãy đeo tai nghe để cảm nhận âm thanh sống động nhất từ căn bếp</p>
+        </div>
+    </div>
+  </section>
+
+  <section id="cooking" class="container hidden-section">
+    <h2 class="tit">Thư viện món ngon</h2>
+    <div id="cooking-menu" class="box-wrap">
+      <button class="menu-item" onclick="showRecipe('trung')">Trứng Chiên Nước Mắm</button>
+      <button class="menu-item" onclick="showRecipe('com-hen')">Cơm Hến Cố Đô</button>
+      <button class="menu-item" onclick="showRecipe('che-bap')">Chè Bắp Cốt Dừa</button>
+    </div>
+    
+    <div id="cooking-details" class="hidden-section">    
+      <div id="detail-trung" class="recipe-full">
+        <button class="btn-back">Quay lại</button>
+        <div class="ingredient-section">
+          <img src="/img/trungchien.jpg" alt="Đĩa trứng chiên vàng ruộm" style="width:100%; border-radius:10px; margin-bottom:15px;">
+          <h4>Nguyên liệu</h4>
+          <ul><li>5 quả trứng gà
+1 ít hành lá cắt nhỏ
+1 ít hành phi
+Gia vị: dầu ăn, nước mắm, bột ngọt, tương ớt, ớt bột, tiêu xay</li></ul>
+        </div>
+        <div class="method-section">
+          <h4>Cách làm</h4>
+          <p>
+              Bước 1: Làm nước sốt
+Bạn cho vào chén các gia vị sau để pha nước sốt mắm: 1 muỗng canh tương ớt, 2 muỗng canh nước mắm, 1 muỗng cà phê ớt bột, 1 muỗng cà phê tiêu xay, 1 muỗng cà phê bột ngọt rồi khuấy đều.
+<br>
+            Bước 2: Chiên trứng sốt mắm
+Bắc chảo lên bếp, bạn cho vào ít dầu ăn đợi đến khi nóng thì bạn đập 5 quả trứng cho vào chảo chiên khoảng 30 giây. Sau đó, bạn rưới nước sốt lên bề mặt trứng, đợi cho sôi và rắc thêm hành lá, hành phi và tiêu xay là hoàn thành.
+<br>
+            Bước 3: Thành phẩm
+Món trứng chiên sốt mắm có màu sắc đẹp mắt và mùi thơm tỏa ra hấp dẫn. Bạn chỉ cần chuẩn bị thêm cơm trắng hoặc vài ổ bánh mì để ăn kèm là tuyệt vời.</p>
+        </div>
+      </div>
+      <div id="detail-com-hen" class="recipe-full">
+        <button class="btn-back">Quay lại</button>
+        <div class="ingredient-section">
+          <img src="/img/comhen.jpg" alt="Tô cơm hến Huế" style="width:100%; border-radius:10px; margin-bottom:15px;">
+          <h4>Nguyên liệu</h4>
+          <ul><li>0.5 kg hến tươi<br>
+1 bát cơm trắng<br>
+30g đậu phộng<br>
+30g da heo<br>
+1 quả khế<br>
+Hành tím băm<br>
+Gia vị: dầu ăn, đường, mắm ruốc, sa tế Hội An<br>
+Các loại rau thơm ăn kèm: dọc mùng bào sợi, bắp chuối, giá, khế chua</li></ul>
+        </div>
+        <div class="method-section">
+          <h4>Cách làm</h4>
+          <p>
+            Bước 1 Sơ chế hến
+Hến tươi rửa sạch, cho vào nồi nước sôi vào luộc chín. Sau đó bạn vớt hến ra, để lại phần nước luộc.<br>
+Bước 2 Sơ chế các nguyên liệu khác
+Da heo rửa sạch, thái miếng vừa rồi chiên giòn.
+Rửa sạch các loại rau thơm ăn kèm, để ráo nước rồi thái nhỏ. Khế rửa sạch, thái sợi nhỏ.
+Bắc chảo dầu lên bếp, cho hạt điều vào để làm dầu màu điều. Đậu phộng bạn vào rang đến khi vàng đều.
+Dọc mùng bào sợi, bắp chuối, giá, rửa sạch, chần sơ với nước sôi. Khế chua mua về rửa sạch, cắt lát mỏng.<br>
+Bước 3 Xào hến
+Đun nóng chảo với một ít dầu ăn rồi cho hành tím băm vào phi thơm.
+Tiếp đến bạn cho phần thịt hến vào chảo, cho thêm ớt sa tế Hội An rồi xào nhanh cho vừa miệng thì tắt bếp.<br>
+Bước 4 Pha nước ruốc
+Bạn cho 1 muỗng canh ruốc vào nồi nước luộc hến, cho thêm đường rồi khuấy đều, nêm nếm đến khi vừa miệng.<br>
+Bước 5 Thành phẩm
+Bạn cho một ít cơm trắng vào tô, lần lượt cho thịt hến, da heo, đậu phộng rang, dọc mùng bào sợi, bắp chuối, giá, khế chua vào tô. Chỉ cần trộn đều lên và chan nước ruốc đã pha vào là bạn đã có ngay một tô cơm hến ngon tuyệt.
+          </p>
+        </div>
+      </div>
+      <div id="detail-che-bap" class="recipe-full">
+        <button class="btn-back">Quay lại</button>
+        <div class="ingredient-section">
+          <img src="/img/chebap.jpg" alt="Chè bắp cốt dừa ngọt ngào" style="width:100%; border-radius:10px; margin-bottom:15px;">
+          <h4>Nguyên liệu</h4>
+          <ul><li>3 trái bắp nếp tươi<br>
+40gr bột năng<br>
+200 ml nước cốt dừa<br>
+1 bó lá dứa<br>
+2 ống vani<br>
+Gia vị: 100gr đường vàng và nửa thìa cà phê muối<br></li></ul>
+        </div>
+        <div class="method-section">
+          <h4>Cách làm</h4>
+          <p>
+            Bước 1 Sơ chế nguyên liệu
+Bắp nếp đem về rửa sạch, bóc hết râu bắp và đem đi bóc lấy hạt hoặc lấy dao bào để bào hết hạt bắp ra khỏi lõi, giữ lại phần lõi để ninh lấy nước.<br>
+Bước 2 Nấu chè
+Đầu tiên bạn bắc 1 nồi nước với 2 bát nước lên bếp và cho vào đó bó lá dứa và lõi bắp khi nảy ninh. Trong lúc chờ nước sôi thì bạn pha bột năng với nước với tỉ lệ là 1:3, khuấy điều và đặt sang một bên.
+Tiếp đó, khi nước sôi thì vớt lá dứa và lõi bắp ra, bạn cho vào đó là hạt bắp đã tách sẵn, điều chỉnh lửa vừa ninh đến khi bắp chín, mềm dẻo thì cho nêm nếm đường và muối sao cho vừa khẩu vị.<br>
+Sau đó, bạn cho vào tiếp 2 ống vani và khuấy đều tay cho phần gia vị tan hết, lúc này bạn cho phần bột năng đã chuẩn bị vào nồi, vừa đổ vừa khuấy để tránh bột bị vón cục.
+Cuối cùng, bạn nấu tới khi thấy chè sánh vừa phải thì tắt bếp, nếu quá đặc thì bạn cho thêm nước, loãng quá thì cho thêm bột năng và nêm nếm lại<br>
+Bước 3 Nấu nước cốt dừa và hoàn thành
+<br>
+Nước cốt dừa thì bạn cho vào một cái nồi, rồi bắt lên bếp để lửa vừa, bạn hòa tan một chén một bột năng với nước theo tỉ lệ 1:3, sau đó cho vào nồi và khuấy đều cho đến khi hơi sánh, nhớ nêm nếp vào nửa thìa cà phê muối, rồi tắt bếp.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article id="page-blog" class="bl hidden-section">
+    <div class="blog-header">
+        <button class="btn-back">← Quay lại</button>
+        <h2 class="tit-blog">Blog SEO & Cảm hứng</h2>
+    </div>
+    <div class="blog-layout">
+        <section class="blog-post">
+            <div class="blog-thumb">
+                <img src="/img/nauan.jpg" alt="SEO Specialist Blog">
+            </div>
+            <div class="blog-content">
+                <span class="category">Soundchef</span>
+                <h3>Tối ưu hóa hình ảnh cho người khiếm thị</h3>
+                <p>Đôi khi việc đơn giản như nấu ăn lại là thứ mà rất nhiều người muốn, để thư giãn và thể hiện tình cảm...</p>
+                <a href="#" class="read-more">Đọc thêm</a>
+            </div>
+        </section>
+        <section class="blog-post">
+            <div class="blog-thumb">
+                <img src="/img/amthuc.jpg" alt="Cooking Blog">
+            </div>
+            <div class="blog-content">
+                <span class="category">Ẩm thực</span>
+                <h3> Tư duy logic trong nấu ăn</h3>
+                <p>Nấu ăn cũng giống như viết code, mỗi nguyên liệu là một dòng lệnh, chỉ cần sai một chút "syntax" là món ăn sẽ khác ngay,cần phải biết quý trọng từng nguyên liệu và nấu bằng cả trái tim...</p>
+                <a href="#" class="read-more">Đọc thêm</a>
+            </div>
+        </section>
+    </div>
+  </article>
+
+  <article id="pg-ct" class="hidden-section">
+    <div class="ct-header">
+        <button class="btn-back">← Quay lại</button>
+        <h2 class="ct-ttl">Kết Nối Với Nguyên</h2>
+    </div>
+    <div class="ct-grid">
+        <div class="ct-card">
+            <span class="ct-icon"><span class="material-symbols-outlined">map</span></span>
+            <h3>Địa chỉ</h3>
+            <p>Hương Thủy, Huế</p>
+        </div>
+        <div class="ct-card">
+            <span class="ct-icon"><span class="material-symbols-outlined">chef_hat</span></span>
+            <h3>Chuyên môn</h3>
+            <p>Đầu Bếp Chuyên Nghiệp</p>
+        </div>
+        <div class="ct-card">
+            <span class="ct-icon"><span class="material-symbols-outlined">attach_email</span></span>
+            <h3>Email</h3>
+            <p>ben2k7vn@gmail.com</p>
+        </div>
+    </div>
+  </article>
+</main>
+
+<div class="access-panel">
+  <button id="panel-toggle" aria-expanded="false" aria-label="Mở bảng hỗ trợ tiếp cận" onclick="toggleAccessPanel()">
+      <span class="material-symbols-outlined">accessibility</span>
+  </button>
+  <div class="panel-content" style="display: none;">
+      <button onclick="toggleHighContrast()">Đổi độ tương phản</button>
+      <button onclick="changeFontSize('increase')">Chữ to hơn</button>
+      <button onclick="changeFontSize('decrease')">Chữ nhỏ hơn</button>
+      <button onclick="togglePlayPause()">Tạm dừng/Phát ASMR</button>
+      <button onclick="replayCurrentAudio()">Phát lại âm thanh</button>
+  </div>
+</div>
+
+<footer>
+  <p>SoundChef - Cooking by sound</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
